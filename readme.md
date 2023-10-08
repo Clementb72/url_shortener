@@ -1,6 +1,6 @@
 # Reduction d'url
 
-Ce projet a pour but de reduire la taille des URLs.
+Ce projet a pour but de m'entrainer à l'utilisation de Javascript et des appels API. C'est un petit projet utilisant un API pour réduire la taille des URLs entrés.
 
 ## Stack technique
 
