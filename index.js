@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     let button_reload = document.getElementById("reload");
     let button_submit = document.getElementById("submit");
-    const apiUrl = "https://api.tinyurl.com";
 
     if(button_reload){
         button_reload.addEventListener("click", () => {
@@ -17,10 +16,16 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     
     function getShortURL(url){
-        fetch(apiUrl+"/create")
+        fetch(`http://tinyurl.com/api-create.php?url=${url}`)
         .then(response => {
-            console.log(response);
-        });
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('resultat').value = data;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });;
     }
 });
 
